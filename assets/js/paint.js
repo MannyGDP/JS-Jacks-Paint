@@ -1,34 +1,24 @@
 function configureListeners() {
     let images = document.getElementsByTagName('img');
-    // select img elements  
 
-    for (var i = 0; i < images.length; i++) {        
-        function configureListeners() { 
-            let images = document.getElementsByTagName('img'); // select img elements  
-        
-            // Iterate over the images and add event listeners
-            for (var i = 0; i < images.length; i++) {        
+    // Iterate over the images and add event listeners       
+    for (var i = 0; i < images.length; i++) {      
                 // Add mouseover event listener
                 images[i].addEventListener('mouseover', addOpacity, false);
-        
-                // Add mouseout event listener
                 images[i].addEventListener('mouseout', removeOpacity, false);
             } 
         }
-          
-    } 
-}
 
 function addOpacity(event) {
     // add appropriate CSS class
-    if (!this.classList.contains('dim')){
+    if (!this.classList.contains('dim')) {
         this.classList.add('dim');
     }
     getProductInfo(event.target.id);     
 }
 
 function removeOpacity(event) {
-    if (this.classList.contains('dim')){
+    if (this.classList.contains('dim')) {
         this.classList.remove('dim');
         //remove appropriate CSS class
     }
@@ -44,14 +34,12 @@ function removeOpacity(event) {
 
 function getProductInfo(colorName) {
     let price;
-    let colorName;  
     
     switch (colorName) {
         case 'pn1':
             price = '$14.99'
             colorName = 'Lime Green'
             updatePrice(colorName, price)           
-            // set variables for price and color name and invoke a function to update the price     
         break;           
         case 'pn2':
             price = '$11.14'
@@ -98,6 +86,7 @@ function getProductInfo(colorName) {
             colorName = 'Unknown Color';
             break;
     }
+}
 
     function updatePrice(colorName, price)
     {       
@@ -107,5 +96,3 @@ function getProductInfo(colorName) {
         let color = document.getElementById('color-name');
         color.textContent = colorName;
     }
-    
-}
