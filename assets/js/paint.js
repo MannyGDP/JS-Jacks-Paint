@@ -93,7 +93,10 @@ function getProductInfo(colorName) {
             colorName = 'Solid Yellow'                       
             updatePrice(colorName, price)   
             break;   
-        default:             
+        default:
+            price = 'unknown';
+            colorName = 'Unknown Color';
+            break;
     }
 
     function updatePrice(colorName, price)
