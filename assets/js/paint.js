@@ -1,11 +1,21 @@
 function configureListeners() {
-    let images = document.getElementsByTagNameNS('img');
+    let images = document.getElementsByTagName('img');
     // select img elements  
 
     for (var i = 0; i < images.length; i++) {        
-        document.getElementById(images[i].id).addEventListener('mouseover', addOpacity, false)
-        document.getElementById(images[i].id).addEventListener('mouseover', removeOpacity, false)
-        // iterate over images and add mouseover event listeners      
+        function configureListeners() { 
+            let images = document.getElementsByTagName('img'); // select img elements  
+        
+            // Iterate over the images and add event listeners
+            for (var i = 0; i < images.length; i++) {        
+                // Add mouseover event listener
+                images[i].addEventListener('mouseover', addOpacity, false);
+        
+                // Add mouseout event listener
+                images[i].addEventListener('mouseout', removeOpacity, false);
+            } 
+        }
+          
     } 
 }
 
